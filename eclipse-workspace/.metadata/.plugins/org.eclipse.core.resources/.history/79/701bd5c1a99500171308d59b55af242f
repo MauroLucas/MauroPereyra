@@ -1,0 +1,27 @@
+package modelo;
+ import java.util.List;
+public class Inca {
+
+	private List<Pelicula> catalogo;
+	
+	public Inca() {}
+
+	public List<Pelicula> getCatalogo() {
+		return catalogo;
+	}
+
+	public void setCatalogo(List<Pelicula> catalogo) {
+		this.catalogo = catalogo;
+	}
+	
+	public boolean agregarPelicula(String pelicula) {
+		boolean resultado=false;
+		for(Pelicula peli: catalogo) {
+			if(pelicula.equals(peli.getPelicula()))
+				resultado=true;
+		}
+		return resultado;
+	}
+	
+	
+}

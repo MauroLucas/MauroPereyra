@@ -1,0 +1,13 @@
+package test;
+import modelo.Inca;
+import modelo.Pelicula;
+public class TestInca {
+
+	public static void main(String[] args) {
+		
+		
+		List<Pelicula> catalogo = new Lista<Pelicula>();
+
+	}
+
+}

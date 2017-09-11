@@ -1,0 +1,22 @@
+package test;
+import modelo.Ceta; 
+import modelo.Funciones;
+import modelo.Contribuyente;
+import modelo.Rodado;
+public class TestCeta {
+
+	public static void main(String[] args) {
+		
+		
+		//VAlidar Rodado
+		try {
+			
+		}
+		catch(Exception e){
+			System.out.print("Excepcion: " + e.getMessage());
+			
+		}
+
+	}
+
+}

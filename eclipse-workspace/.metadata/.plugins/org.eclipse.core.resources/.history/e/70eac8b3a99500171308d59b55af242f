@@ -1,0 +1,8 @@
+package modelo;
+ import java.util.List;
+public class Inca {
+
+	private List<Pelicula> catalogo;
+	
+	public Inca() {}
+}

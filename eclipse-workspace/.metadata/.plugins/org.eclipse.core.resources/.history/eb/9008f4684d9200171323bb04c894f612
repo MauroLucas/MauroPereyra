@@ -1,0 +1,73 @@
+package modelo;
+import java.util.Calendar;
+import java.util.GregorianCalendar; 
+public class Ceta {
+	
+	private int idCeta;
+	private GregorianCalendar fecha;
+	private Contribuyente vendedor;
+	private Contribuyente comprador;
+	private double valorDeTranferencia;
+	
+	public Ceta() {}
+    
+	public Ceta(int idCeta, GregorianCalendar fecha, Contribuyente vendedor, Contribuyente comprador,
+			double valorDeTranferencia) {
+		super();
+		this.idCeta = idCeta;
+		this.fecha = fecha;
+		this.vendedor = vendedor;
+		this.comprador = comprador;
+		this.valorDeTranferencia = valorDeTranferencia;
+	}
+	
+
+	@Override
+	public String toString() {
+		return "Ceta [idCeta=" + idCeta + ", fecha=" + fecha + ", vendedor=" + vendedor + ", comprador=" + comprador
+				+ ", valorDeTranferencia=" + valorDeTranferencia + "]";
+	}
+
+	public int getIdCeta() {
+		return idCeta;
+	}
+
+	public void setIdCeta(int idCeta) {
+		this.idCeta = idCeta;
+	}
+
+	public GregorianCalendar getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(GregorianCalendar fecha) {
+		this.fecha = fecha;
+	}
+
+	public Contribuyente getVendedor() {
+		return vendedor;
+	}
+
+	public void setVendedor(Contribuyente vendedor) {
+		this.vendedor = vendedor;
+	}
+
+	public Contribuyente getComprador() {
+		return comprador;
+	}
+
+	public void setComprador(Contribuyente comprador) {
+		this.comprador = comprador;
+	}
+
+	public double getValorDeTranferencia() {
+		return valorDeTranferencia;
+	}
+
+	public void setValorDeTranferencia(double valorDeTranferencia) {
+		this.valorDeTranferencia = valorDeTranferencia;
+	}
+	
+	
+
+}

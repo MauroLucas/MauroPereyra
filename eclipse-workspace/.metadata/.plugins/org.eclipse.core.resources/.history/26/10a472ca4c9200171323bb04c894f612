@@ -1,0 +1,11 @@
+package modelo;
+
+public class Rodado {
+	private int idRodado;
+    private String dominio;
+    private int modelo;
+    private String marca;
+    
+    public Rodado() {}
+    
+}

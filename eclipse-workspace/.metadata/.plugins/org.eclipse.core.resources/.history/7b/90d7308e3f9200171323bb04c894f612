@@ -1,0 +1,29 @@
+package modelo;
+
+public class Fraccion {
+
+	private int numerador;
+	private int denominador;
+	
+	public Fraccion() {}
+	public Fraccion(int numerador,int denominador)throws Exception{
+		this.numerador=numerador;
+		this.setDenominador(denominador);
+	}
+	
+	public int getNumerador() {
+		return numerador;
+	}
+	public void setNumerador(int numerador) {
+		this.numerador = numerador;
+	}
+	public int getDenominador() {
+		return denominador;
+	}
+	public void setDenominador(int denominador)throws Exception {
+		if(denominador==0) throw new Exception("Error: No se divide por 0 la puta que te pario");
+		this.denominador=denominador;
+	}
+	
+	
+}

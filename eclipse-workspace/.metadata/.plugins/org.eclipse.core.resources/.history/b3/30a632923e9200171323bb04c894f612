@@ -1,0 +1,10 @@
+package test;
+import modelo.Fraccion;
+public class TestFraccion {
+
+	public static void main(String[] args) {
+		Fraccion quebrado = new Fraccion(10,0);
+
+	}
+
+}

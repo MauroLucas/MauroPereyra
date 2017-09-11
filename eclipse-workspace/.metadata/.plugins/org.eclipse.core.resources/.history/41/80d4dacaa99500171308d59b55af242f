@@ -1,0 +1,9 @@
+package modelo;
+
+public class Pelicula {
+	
+	private int idPelicula;
+	private String pelicula;
+	
+
+}

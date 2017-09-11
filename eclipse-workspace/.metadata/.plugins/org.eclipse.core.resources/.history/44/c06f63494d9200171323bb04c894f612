@@ -1,0 +1,10 @@
+package modelo;
+import java.util.Calendar;
+import java.util.GregorianCalendar; 
+public class Ceta {
+	
+	private int idCeta;
+	private GregorianCalendar fecha;
+	private Contribuyente vendedor;
+
+}

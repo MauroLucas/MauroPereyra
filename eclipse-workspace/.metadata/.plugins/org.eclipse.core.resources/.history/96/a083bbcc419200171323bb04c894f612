@@ -1,0 +1,15 @@
+package test;
+
+public class TestFraccion {
+
+	public static void main(String[] args)  {
+		try {
+			
+			Fraccion f1 = new Fraccion(10,0);
+		}
+		catch (Exception e) {
+			System.out.println("Exception: "+e.getMessage());
+		}
+	}
+
+}

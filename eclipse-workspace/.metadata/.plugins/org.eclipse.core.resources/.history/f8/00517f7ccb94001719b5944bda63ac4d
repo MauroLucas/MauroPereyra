@@ -1,0 +1,10 @@
+package test;
+import modelo;
+public class TestCeta {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

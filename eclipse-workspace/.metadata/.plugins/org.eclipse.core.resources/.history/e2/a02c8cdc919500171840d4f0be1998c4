@@ -1,0 +1,60 @@
+package modelo;
+
+public class Numero {
+  //Atrivutos
+	private int n;
+  
+  //MEtodos
+  public Numero() {} //Constructor
+  public Numero(int n) { //Contructor
+	  this.n=n;
+  }
+  public void setNumero(int n) { //Asigna un valor a n
+	  this.n=n;
+  }
+  public int getNumero() { // Retorna n
+	  return(this.n);
+  }
+ 
+ 
+  public boolean esPrimo(int n1) {
+	  boolean primo=false;
+	  int contador=0;
+	  for(int i=2;i<=n1;i++)
+	  {
+		  if(n1%i==0) {
+			  contador=contador+1;
+		  }
+	  }
+	  if(contador==1) {
+		  primo=true;
+	  }
+	  else {
+		  primo=false;
+	  }
+		  
+	  
+	  
+	  return (primo);
+  }
+  public boolean esPrimo() {
+	  return this.esPrimo(n);
+  }
+  
+  public boolean esPrimoMellizo() {
+	  
+	  boolean resultado=false;
+	  Numero n1 = new Numero (n);
+	  Numero n2 = new Numero (n+2);
+	  if(n1.esPrimo() && n2.esPrimo()) {
+		  resultado=true;
+	  }
+	  
+	  return resultado;
+  }
+  
+ 
+
+  
+}
+
