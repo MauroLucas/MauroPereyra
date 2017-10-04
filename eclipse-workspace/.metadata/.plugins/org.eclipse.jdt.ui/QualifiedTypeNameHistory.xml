@@ -8,15 +8,16 @@
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="modelo.ArregloBiderecional"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
-<fullyQualifiedTypeName name="java.util.Calendar"/>
 <fullyQualifiedTypeName name="modelo.Numero"/>
 <fullyQualifiedTypeName name="modelo.Fraccion"/>
 <fullyQualifiedTypeName name="modelo.Ceta"/>
-<fullyQualifiedTypeName name="modelo.Funciones"/>
 <fullyQualifiedTypeName name="modelo.Contribuyente"/>
 <fullyQualifiedTypeName name="modelo.Rodado"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="modelo.Inca"/>
 <fullyQualifiedTypeName name="modelo.Pelicula"/>
 <fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="modelo.Funciones"/>
+<fullyQualifiedTypeName name="java.util.Calendar"/>
+<fullyQualifiedTypeName name="modelo.Supermercado"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>

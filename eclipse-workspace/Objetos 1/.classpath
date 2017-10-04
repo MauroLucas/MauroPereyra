@@ -3,5 +3,7 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="Listas"/>
+	<classpathentry kind="src" path="TP CETA"/>
+	<classpathentry kind="src" path="analisis de casteo"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

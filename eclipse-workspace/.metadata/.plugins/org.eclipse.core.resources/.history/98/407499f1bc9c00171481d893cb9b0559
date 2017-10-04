@@ -1,0 +1,24 @@
+package test;
+
+public class Test {
+
+	public static void main(String[] args) {
+		int contador=0;
+		int contador2=0;
+		boolean hola=true;
+		while(hola=true) {
+			String virus =new String("soy un virus");
+		}
+		for(int i=1;i<7;i++) {
+			for(int j=1;j<7;j++) {
+				if(i==j) {
+					System.out.println(i+","+j);
+				}
+				
+				
+			}
+		}
+
+	}
+
+}

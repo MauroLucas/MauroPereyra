@@ -1,0 +1,16 @@
+package test;
+import modelo.*;
+public class TestModificarProducto {
+
+	public static void main(String[] args) {
+		Supermercado s = new Supermercado();
+		try {
+			s.agregarProducto("patatas",10);
+			s.modificarProducto(1,"lechucas",20);
+		}
+		catch(Exception e){
+			System.out.println(e.getMessage());
+		}
+	}
+
+}

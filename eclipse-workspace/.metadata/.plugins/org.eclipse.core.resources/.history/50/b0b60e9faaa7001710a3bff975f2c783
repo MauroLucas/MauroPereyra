@@ -1,0 +1,26 @@
+package test;
+
+import java.util.GregorianCalendar;
+
+import modelo.Carrito;
+import modelo.Supermercado;
+
+public class TestTotal {
+
+	public static void main(String[] args) {
+		Supermercado s=new Supermercado();
+ 	   Carrito carrito = new Carrito(1,new GregorianCalendar());
+ 	   
+ 	   
+ 	   s.agregarProducto("patatas", 10);
+ 	   s.agregarProducto("remolacha", 50);
+ 	   
+ 	   carrito.agregarItem(s.traerProducto(1), 10);
+ 	   
+ 	   System.out.println(carrito.traerItem(1));
+ 	   
+ 	   System.out.println();
+
+	}
+
+}

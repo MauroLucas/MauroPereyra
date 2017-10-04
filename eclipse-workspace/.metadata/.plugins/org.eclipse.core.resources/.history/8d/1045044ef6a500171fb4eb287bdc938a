@@ -1,0 +1,19 @@
+package test;
+import modelo.*;
+public class TestAgregarProducto {
+
+	public static void main(String[] args) {
+      Supermercado s = new Supermercado()
+      try {
+    	  
+      }
+      catch(Exception e) {
+    	  System.out.println(e.getMessage());
+      }
+      
+      finally {
+    	  
+      }
+	}
+
+}

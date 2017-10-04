@@ -1,0 +1,12 @@
+package test;
+import modelo.*;
+public class Test1 {
+
+	public static void main(String[] args) {
+		
+		Producto pro= new Producto();
+		// TODO Auto-generated method stub
+
+	}
+
+}

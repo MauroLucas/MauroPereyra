@@ -1,0 +1,21 @@
+package test;
+import modelo.*;
+import java.util.GregorianCalendar;
+public class TestAgregarItem {
+
+	public static void main(String[] args) {
+		
+		try {
+			Supermercado s=new Supermercado();
+			s.agregarProducto("patatas", 10);
+			
+			Carrito carrito =new Carrito(1,new GregorianCalendar());
+			
+			
+		}
+		catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+}

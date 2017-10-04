@@ -1,0 +1,15 @@
+package test;
+
+public class TestEliminarProducto {
+
+	public static void main(String[] args) {
+		try {
+			Supermercado s=new Supermercado();
+		}
+		catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+	}
+
+}

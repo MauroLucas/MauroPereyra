@@ -1,0 +1,63 @@
+package modelo;
+import java.util.GregorianCalendar;
+import java.util.ArrayList;
+import java.util.List;
+public class Carrito {
+
+	private int idCarrito;
+	private GregorianCalendar fechaHora;
+	private List<ItemCarrito> lstItem;
+	public Carrito(int idCarrito, GregorianCalendar fechaHora) {
+		
+		this.idCarrito = idCarrito;
+		this.fechaHora = fechaHora;
+		lstItem = new ArrayList<ItemCarrito>();
+	}
+	public boolean agregarItem(Producto producto,int cantidad) {
+		boolean resultado=false;
+		boolean encontrado=false;
+		int i=0;
+		while(i<lstItem.size() && encontrado==false) {
+			if(producto.equals(lstItem.get(i).getProducto())) {
+			    lstItem.get(i).incrementar();
+				encontrado=true;	
+			}
+		i++;
+		}
+		if(!encontrado) {
+			resultado=true;
+			if(lstItem.size()==0) {
+				lstItem.add(new ItemCarrito(1,producto,cantidad));
+			}
+			else {
+				lstItem.add(new ItemCarrito(lstItem.get(lstItem.size()-1).getIdItem()+1,producto,cantidad));
+			}
+		}
+		
+		return resultado;
+	}
+	
+	public int getIdCarrito() {
+		return idCarrito;
+	}
+	public void setIdCarrito(int idCarrito) {
+		this.idCarrito = idCarrito;
+	}
+	
+	public List<ItemCarrito> getListaCarrito() {
+		return lstItem;
+	}
+	
+	public String toString() {
+		String resultado=new String();
+		resultado=resultado+ "id:"+idCarrito + " fecha/hora:" + fechaHora +"\n";
+		for(ItemCarrito i : lstItem) {
+			resultado= resultado + i.toString() "\n";
+		}
+		return resultado;
+	}
+	
+	
+	
+	
+}

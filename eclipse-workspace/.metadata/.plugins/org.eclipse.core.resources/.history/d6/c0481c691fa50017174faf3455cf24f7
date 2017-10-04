@@ -1,0 +1,17 @@
+package modelo;
+
+public class ItemCarrito {
+	
+	private int idItem;
+	private Producto producto;
+	private int cantidad;
+	public ItemCarrito(int idItem, Producto producto, int cantidad) {
+		
+		this.idItem = idItem;
+		this.producto = producto;
+		this.cantidad = cantidad;
+	}
+	
+	
+
+}

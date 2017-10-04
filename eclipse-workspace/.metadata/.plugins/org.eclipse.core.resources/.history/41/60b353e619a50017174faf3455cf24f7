@@ -1,0 +1,9 @@
+package modelo;
+
+public class ItemCarrito {
+	
+	private int idItem;
+	private Producto producto;
+	private int cantidad;
+
+}

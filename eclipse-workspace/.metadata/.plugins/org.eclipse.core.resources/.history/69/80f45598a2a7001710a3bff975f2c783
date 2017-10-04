@@ -1,0 +1,16 @@
+package test;
+import modelo.*;
+public class TestEliminarItem {
+
+	public static void main(String[] args) {
+       try {
+    	   Supermercado s=new Supermercado();
+    	   Carrito carrito = new Carrito();
+       }
+       catch(Exception e) {
+    	   System.out.println(e.getMessage());
+       }
+
+	}
+
+}

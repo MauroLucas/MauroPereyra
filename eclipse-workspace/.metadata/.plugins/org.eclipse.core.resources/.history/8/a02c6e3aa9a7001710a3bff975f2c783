@@ -1,0 +1,19 @@
+package test;
+import java.util.GregorianCalendar;
+
+import modelo.*;
+public class TestSubTotal {
+
+	public static void main(String[] args) {
+		try {
+	    	  
+	    	   
+	    	   System.out.println(carrito);
+	       }
+	       catch(Exception e) {
+	    	   System.out.println(e.getMessage());
+	       }
+
+	}
+
+}

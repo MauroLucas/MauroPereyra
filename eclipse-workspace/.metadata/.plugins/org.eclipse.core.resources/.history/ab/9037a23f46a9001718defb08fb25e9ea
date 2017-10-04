@@ -1,0 +1,232 @@
+package modelo;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.GregorianCalendar;
+public class Supermercado {
+	
+      private List<Producto> gondola;
+      private List<Carrito> lstCarrito;
+      private List<Cliente> lstCliente;
+    
+      
+      public Supermercado() {
+    	  gondola = new ArrayList<Producto>();
+    	  lstCarrito = new ArrayList<Carrito>();
+    	  lstCliente = new ArrayList<Cliente>();
+    	 
+      }
+      
+      ///ABM gondola////
+      public boolean agregarProducto(String producto,float precio)throws Exception {
+    	  boolean resultado=false;
+    	  Producto p = traerProducto(producto);
+    	  if(p!=null)throw new Exception("Producto existente:"+producto);
+    	  if(gondola.size()==0) {
+    		  gondola.add(new Producto(1,producto,precio));
+    		  resultado=true;
+    	  }
+    	  else {
+    		  
+    		  gondola.add(new Producto(gondola.get(gondola.size()-1).getIdProducto()+1,producto,precio));
+    		  resultado=true;
+    	  }
+    	  return resultado;
+      }
+      
+      public Producto traerProducto(int idProducto) {
+    	  Producto resultado = null;
+    	  int i=0;
+    	  boolean encontrado=false;
+    	  while(i<gondola.size()&&encontrado==false) {
+    		  if(idProducto==gondola.get(i).getIdProducto()) {
+    			  resultado=gondola.get(i);
+    			  encontrado=true;
+    			  
+    		  }
+    		  i++;
+    	  }
+    	  
+    	  
+    	  return resultado;
+      }
+      
+      public Producto traerProducto(String producto) {
+    	  Producto resultado = null;
+    	  int i=0;
+    	  boolean encontrado=false;
+    	  while(i<gondola.size()&&encontrado==false) {
+    		  if(producto.equalsIgnoreCase(gondola.get(i).getProducto())) {
+    			  resultado=gondola.get(i);
+    			  encontrado=true;
+    			  
+    		  }
+    	  i++;
+    	  }
+    	  
+    	  return resultado;
+      }
+      
+      //Precondicion: El producto no debe existir en un Carrito//
+      public boolean eliminarProducto(int idProducto)throws Exception {
+    	 boolean resultado=false; 
+    	 
+    	 Producto p=traerProducto(idProducto);
+    	 if(p==null)throw new Exception("El producto no existe"+"id:" + idProducto);
+    	 boolean encontrado=false;
+    	 for(Carrito c:lstCarrito) {
+    		 for(ItemCarrito ItemCarrito:c.getListaCarrito()) {
+    			 if(p.equals(ItemCarrito.getProducto())) {
+    				 encontrado=true;
+    			 }
+    		 }
+    	 }
+    	 if(encontrado)throw new Exception("El producto existe en un carrito");
+    	 else {
+    		 gondola.remove(p);
+    	 }
+    	 
+    	 
+         return resultado;
+      }
+      
+	
+      
+	public boolean modificarProducto(int idProducto,String producto,double precio)throws Exception {
+    	  boolean resultado=true;
+    	  Producto p= traerProducto(idProducto);
+    	  if(p==null)throw new Exception("Producto Inexistente:"+" id:"+idProducto);
+    	  p.setProducto(producto);
+    	  
+    	  p.setPrecio((float)precio);
+    	  return resultado;
+      }
+      /////////////
+      
+	////ABM Carrito///////////////////
+	//Pre Condicion: Si el cliente es el mismo la fechahora debe ser distinta
+	public boolean agregarCarrito(GregorianCalendar fechahora,Cliente cliente)throws Exception {
+		boolean resultado=false;
+		if(cliente==null)throw new Exception("Cliente no encontrado");
+	    if(lstCarrito.size()==0) {
+	    	lstCarrito.add(new Carrito(1,fechahora,cliente));
+	    }
+	    else {
+	    	int lastId=lstCarrito.get(lstCarrito.size()-1).getIdCarrito();
+	    	lstCarrito.add(new Carrito(lastId,fechahora,cliente));
+	    }
+		
+		return resultado;
+	}
+	
+	public boolean eliminarCarrito(int idCarrito)throws Exception {
+		
+		Carrito c=traerCarrito(idCarrito);
+		if(c==null)throw new Exception("Carrito inexistente");
+		return lstCarrito.remove(c);
+	}
+	
+	public Carrito traerCarrito(int idCarrito) {
+		Carrito carrito = null;
+		boolean encontrado=false;
+		int i=0;
+		while(i<lstCarrito.size() && encontrado==false) {
+			if(lstCarrito.get(i).getIdCarrito()==idCarrito) {
+				carrito=lstCarrito.get(i);
+				encontrado=true;
+			}
+		}
+		return carrito;
+		
+	}
+	
+	//////////////////////////
+	
+	////ABM Cliente//////////////////
+	public boolean agregarCliente(String cliente,long dni,String direccion)throws Exception {
+		boolean resultado=false;
+		Cliente c = traerCliente(dni);
+		if(c!=null)throw new Exception("Cliente existente");
+		if(lstCliente.size()==0) {
+			lstCliente.add(new Cliente (1,cliente,dni,direccion));
+			resultado=true;
+		}
+		else {
+			int lastId=lstCliente.get(lstCliente.size()-1).getIdCliente();
+			lstCliente.add(new Cliente(lastId+1,cliente,dni,direccion));
+			resultado=true;
+		}
+		
+		
+		return resultado;
+		
+	}
+	
+	//Pre Condicion: El cliente no debe tener carritos asignados//
+	public boolean eliminarCliente(int idCliente)throws Exception {
+		Cliente c=traerCliente(idCliente);
+		if(c==null)throw new Exception("Cliente inexistente");
+		boolean encontrado=false;
+		int i=0;
+		while(i<lstCarrito.size() && encontrado==false) {
+			if(lstCarrito.get(i).getCliente().equals(c)) {
+				encontrado=true;
+			}
+		}
+		
+	}
+	
+	
+	public Cliente traerCliente(long dni) {
+		Cliente cliente = null;
+		int i=0;
+		boolean encontrado=false;
+		while(i<lstCliente.size() && encontrado==false) {
+			if(dni==lstCliente.get(i).getDni()) {
+				cliente = lstCliente.get(i);
+			}
+		}
+		return cliente;
+	}
+	
+	public Cliente traerCliente(int idCliente) {
+		Cliente cliente = null;
+		int i =0;
+		boolean encontrado=false;
+		while(i<lstCliente.size() && encontrado==false) {
+			if(idCliente==lstCliente.get(i).getIdCliente()) {
+				cliente=lstCliente.get(i);
+				encontrado=true;
+			}
+		}
+		return cliente;
+	}
+	
+	
+	/////////////////////////////
+	
+	
+      
+      public String toString() {
+    	  String resultado = "Gondola:" + "\n";
+    	  for(Producto p:gondola) {
+    		  resultado +=  p.toString() + "\n";
+    	  }
+    	  
+    	  resultado = resultado + "Clientes:" +"\n" ;
+    	  
+    	  for(Cliente c: lstCliente) {
+    		  
+    		  resultado += c.toString() + "\n";
+    	  }
+    	  
+    	  
+    	  resultado = resultado + "Carritos:" + "\n";
+    	  for(Carrito c:lstCarrito) {
+    		  resultado += c.toString() + "\n";
+    	  }
+    	  
+    	  
+    	  return resultado;
+      }
+      
+}

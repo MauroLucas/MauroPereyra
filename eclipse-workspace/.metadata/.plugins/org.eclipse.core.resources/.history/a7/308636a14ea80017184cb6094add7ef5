@@ -1,0 +1,30 @@
+package test;
+import modelo.*;
+public class TestNivel2 {
+
+	public static void main(String[] args) {
+		
+		
+		
+		
+		try {
+			Supermercado s = new Supermercado();
+			
+			s.agregarProducto("Papa", 5);
+			s.agregarProducto("remolacha", 50);
+			
+			s.agregarCliente("Mauro", 38301299, "Cordero 540");
+			
+			
+		}
+		catch(Exception e){
+			System.out.println(e.getMessage());
+		}
+		
+		finally {
+			System.out.println(s);
+		}
+
+	}
+
+}
